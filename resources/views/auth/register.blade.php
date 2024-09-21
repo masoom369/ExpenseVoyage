@@ -1,6 +1,5 @@
 @extends('layouts.guest')
 @section('content')
-
     <div class="d-flex justify-content-center">
         <div class="card card-authentication1 mt-3" style="width: 50%;">
             <div class="card-body">
@@ -17,7 +16,8 @@
                     <div class="form-group">
                         <label for="name">Name</label>
                         <div class="position-relative has-icon-right">
-                            <x-input id="name" class="form-control input-shadow" type="text" name="name" :value="old('name')" required autofocus placeholder="Enter Your Name" />
+                            <x-input id="name" class="form-control input-shadow" type="text" name="name"
+                                :value="old('name')" required autofocus placeholder="Enter Your Name" />
                             <div class="form-control-position">
                                 <i class="icon-user"></i>
                             </div>
@@ -27,7 +27,8 @@
                     <div class="form-group">
                         <label for="email">Email ID</label>
                         <div class="position-relative has-icon-right">
-                            <x-input id="email" class="form-control input-shadow" type="email" name="email" :value="old('email')" required placeholder="Enter Your Email ID" />
+                            <x-input id="email" class="form-control input-shadow" type="email" name="email"
+                                :value="old('email')" required placeholder="Enter Your Email ID" />
                             <div class="form-control-position">
                                 <i class="icon-envelope-open"></i>
                             </div>
@@ -53,7 +54,8 @@
                     <div class="form-group">
                         <label for="password">Password</label>
                         <div class="position-relative has-icon-right">
-                            <x-input id="password" class="form-control input-shadow" type="password" name="password" required placeholder="Choose Password" />
+                            <x-input id="password" class="form-control input-shadow" type="password" name="password"
+                                required placeholder="Choose Password" />
                             <div class="form-control-position">
                                 <i class="icon-lock"></i>
                             </div>
@@ -63,7 +65,8 @@
                     <div class="form-group">
                         <label for="password_confirmation">Confirm Password</label>
                         <div class="position-relative has-icon-right">
-                            <x-input id="password_confirmation" class="form-control input-shadow" type="password" name="password_confirmation" required placeholder="Confirm Password" />
+                            <x-input id="password_confirmation" class="form-control input-shadow" type="password"
+                                name="password_confirmation" required placeholder="Confirm Password" />
                             <div class="form-control-position">
                                 <i class="icon-lock"></i>
                             </div>
@@ -91,7 +94,4 @@
             </div>
         </div>
     </div>
-
 @endsection
-
-

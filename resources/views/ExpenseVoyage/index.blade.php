@@ -205,22 +205,23 @@
                         <div id="tab-1" class="tab-pane fade show p-0 active">
                             <div class="row g-4">
                                 @forelse ($destinations as $destination)
-                                
-                                <div class="col-lg-4">
-                                    <a href="{{ url('trips/create') }}">
-                                    <div class="destination-img">
-                                        <img class="img-fluid rounded w-100"
-                                            src="{{ asset($destination->d_image_path) }}" alt="{{ $destination->name }}">
-                                        <div class="destination-overlay p-4">
-                                            <h4 class="text-white mb-2 mt-3">{{ $destination->name }}</h4>
-                                        </div>
-                                        
-                                    </div></a>
-                                </div>
-                            
+                                    <div class="col-lg-4">
+                                        <a href="{{ url('trips/create') }}">
+                                            <div class="destination-img">
+                                                <img class="img-fluid rounded w-100"
+                                                    src="{{ asset($destination->d_image_path) }}"
+                                                    alt="{{ $destination->name }}">
+                                                <div class="destination-overlay p-4">
+                                                    <h4 class="text-white mb-2 mt-3">{{ $destination->name }}</h4>
+                                                </div>
+
+                                            </div>
+                                        </a>
+                                    </div>
+
                                 @empty
-                                <p>no destinations found</p>
-                            @endforelse
+                                    <p>no destinations found</p>
+                                @endforelse
                             </div>
                         </div>
                     </div>

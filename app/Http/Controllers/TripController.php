@@ -9,17 +9,20 @@ use Illuminate\Support\Facades\Auth;
 
 class TripController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         $trips = Trip::where('user_id', Auth::id())->get();
         return view('trips.index', compact('trips'));
     }
 
-    public function create() {
+    public function create()
+    {
         $destinations = Destination::all();
         return view('trips.create', compact('destinations'));
     }
 
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
         $request->validate([
             'name' => 'required|string|max:255',
             'budget' => 'required|integer',
@@ -40,10 +43,11 @@ class TripController extends Controller
         return redirect()->route('trips.index');
     }
 
-    public function edit($id) {
+    public function edit($id)
+    {
         $trip = Trip::where('id', $id)
-                    ->where('user_id', Auth::id())
-                    ->firstOrFail();
+            ->where('user_id', Auth::id())
+            ->firstOrFail();
         $destinations = Destination::all();
         return view('trips.edit', compact('trip', 'destinations'));
     }
@@ -57,7 +61,8 @@ class TripController extends Controller
         return view('trips.show', compact('trip', 'totalExpenses', 'budgetExceeded'));
     }
 
-    public function update(Request $request, $id) {
+    public function update(Request $request, $id)
+    {
         $request->validate([
             'name' => 'required|string|max:255',
             'budget' => 'required|integer',
@@ -67,8 +72,8 @@ class TripController extends Controller
         ]);
 
         $trip = Trip::where('id', $id)
-                    ->where('user_id', Auth::id())
-                    ->firstOrFail();
+            ->where('user_id', Auth::id())
+            ->firstOrFail();
 
         $trip->update([
             'name' => $request->name,
@@ -81,10 +86,11 @@ class TripController extends Controller
         return redirect()->route('trips.index');
     }
 
-    public function destroy($id) {
+    public function destroy($id)
+    {
         $trip = Trip::where('id', $id)
-                    ->where('user_id', Auth::id())
-                    ->firstOrFail();
+            ->where('user_id', Auth::id())
+            ->firstOrFail();
 
         $trip->delete();
 

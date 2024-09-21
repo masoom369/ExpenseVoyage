@@ -29,7 +29,8 @@ class ItineraryController extends Controller
         ]);
     }
 
-    public function index() {
+    public function index()
+    {
         $itineraries = Itinerary::where('user_id', Auth::id())
             ->with('trip')
             ->get();
@@ -40,7 +41,8 @@ class ItineraryController extends Controller
         return view('itineraries.index', compact('itineraries', 'userCurrency', 'destinations'));
     }
 
-    public function create() {
+    public function create()
+    {
         $trips = Trip::where('user_id', Auth::id())->get();
         return view('itineraries.create', compact('trips'));
     }
@@ -70,7 +72,8 @@ class ItineraryController extends Controller
         return redirect()->route('itineraries.index');
     }
 
-    public function edit($id) {
+    public function edit($id)
+    {
         $itinerary = Itinerary::where('id', $id)
             ->where('user_id', Auth::id())
             ->firstOrFail();
@@ -78,7 +81,8 @@ class ItineraryController extends Controller
         return view('itineraries.edit', compact('itinerary', 'trips'));
     }
 
-    public function update(Request $request, $id) {
+    public function update(Request $request, $id)
+    {
         $request->validate([
             'trip_date' => 'required|date',
             'amount' => 'required|integer',
@@ -98,7 +102,8 @@ class ItineraryController extends Controller
         return redirect()->route('itineraries.index');
     }
 
-    public function destroy($id) {
+    public function destroy($id)
+    {
         $itinerary = Itinerary::where('id', $id)
             ->where('user_id', Auth::id())
             ->firstOrFail();

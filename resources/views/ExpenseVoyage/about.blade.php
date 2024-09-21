@@ -17,15 +17,17 @@
         <div class="container py-5">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-5">
-                    <div class="h-100" style="border: 50px solid; border-color: transparent #0dcaf0  transparent #0dcaf0 ;">
-                        <img src="{{ asset('template/images/full-shot-adventurous-couple-bivouacking.jpg') }}" class="img-fluid w-100 h-100" alt="">
+                    <div class="h-100"
+                        style="border: 50px solid; border-color: transparent #0dcaf0  transparent #0dcaf0 ;">
+                        <img src="{{ asset('template/images/full-shot-adventurous-couple-bivouacking.jpg') }}"
+                            class="img-fluid w-100 h-100" alt="">
                     </div>
                 </div>
                 <div class="col-lg-7"
                     style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)), url(img/about-img-1.png);">
                     <h5 class="section-about-title pe-3">About Us</h5>
                     {{-- <h1 class="mb-4">Welcome to <span class="text-info">Travela</span></h1> --}}
-                     <h1 class="mb-4">Welcome to <span class="text-info">ExpenseVoyage</span></h1>
+                    <h1 class="mb-4">Welcome to <span class="text-info">ExpenseVoyage</span></h1>
                     <p class="mb-4">Our new and simple travel expense platform. Tracking your money when on an adventure,
                         either solo or with a group can be daunting. Between collecting receipts, tracking where your money
                         went, and what you spend for travel often turns controlling the purse strings into a bit of a

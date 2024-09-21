@@ -24,7 +24,12 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name', 'email', 'password', 'currency', 'role', 'profile_photo_path',
+        'name',
+        'email',
+        'password',
+        'currency',
+        'role',
+        'profile_photo_path',
     ];
 
     public function trips()

@@ -21,11 +21,11 @@ class ExpenseController extends Controller
 
         foreach ($expenses as $expense) {
             $csvData .= "{$expense->id},"
-                      . "{$expense->amount},"
-                      . "{$expense->trip->name},"
-                      . "{$expense->category->name},"
-                      . "{$expense->note},"
-                      . "{$expense->created_at->toDateString()}\n";
+                . "{$expense->amount},"
+                . "{$expense->trip->name},"
+                . "{$expense->category->name},"
+                . "{$expense->note},"
+                . "{$expense->created_at->toDateString()}\n";
         }
 
         return response()->stream(function () use ($csvData) {
@@ -36,7 +36,8 @@ class ExpenseController extends Controller
         ]);
     }
 
-    public function index() {
+    public function index()
+    {
         $currencyPreference = Auth::user()->currency;
 
         $expenses = Expense::all();

@@ -8,16 +8,19 @@ use Illuminate\Support\Facades\Auth;
 
 class CategoryController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         $categories = Category::where('user_id', Auth::id())->get();
         return view('categories.index', compact('categories'));
     }
 
-    public function create() {
+    public function create()
+    {
         return view('categories.create');
     }
 
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
         $request->validate([
             'name' => 'required|string|max:255',
         ]);
@@ -30,21 +33,23 @@ class CategoryController extends Controller
         return redirect()->route('categories.index');
     }
 
-    public function edit($id) {
+    public function edit($id)
+    {
         $category = Category::where('id', $id)
-                            ->where('user_id', Auth::id())
-                            ->firstOrFail();
+            ->where('user_id', Auth::id())
+            ->firstOrFail();
         return view('categories.edit', compact('category'));
     }
 
-    public function update(Request $request, $id) {
+    public function update(Request $request, $id)
+    {
         $request->validate([
             'name' => 'required|string|max:255',
         ]);
 
         $category = Category::where('id', $id)
-                            ->where('user_id', Auth::id())
-                            ->firstOrFail();
+            ->where('user_id', Auth::id())
+            ->firstOrFail();
 
         $category->update([
             'name' => $request->name,
@@ -53,10 +58,11 @@ class CategoryController extends Controller
         return redirect()->route('categories.index');
     }
 
-    public function destroy($id) {
+    public function destroy($id)
+    {
         $category = Category::where('id', $id)
-                            ->where('user_id', Auth::id())
-                            ->firstOrFail();
+            ->where('user_id', Auth::id())
+            ->firstOrFail();
 
         $category->delete();
 

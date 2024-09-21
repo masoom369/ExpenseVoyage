@@ -10,7 +10,8 @@
     <link href="{{ asset('dashboard-template/assets/css/pace.min.css') }}" rel="stylesheet" />
     <script src="{{ asset('dashboard-template/assets/js/pace.min.js') }}"></script>
     <link rel="shortcut icon" href="{{ asset('template/logo1.png') }}" type="image/x-icon">
-    <link href="{{ asset('dashboard-template/assets/plugins/vectormap/jquery-jvectormap-2.0.2.css') }}" rel="stylesheet" />
+    <link href="{{ asset('dashboard-template/assets/plugins/vectormap/jquery-jvectormap-2.0.2.css') }}"
+        rel="stylesheet" />
     <link href="{{ asset('dashboard-template/assets/plugins/simplebar/css/simplebar.css') }}" rel="stylesheet" />
     <link href="{{ asset('dashboard-template/assets/css/bootstrap.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('dashboard-template/assets/css/animate.css') }}" rel="stylesheet" />
@@ -22,10 +23,10 @@
 <body class="bg-theme bg-theme1">
     <div id="wrapper">
         <div class="clearfix"></div>
-            <div class="container">
-                @yield('content')
-                <div class="overlay toggle-menu"></div>
-            </div>
+        <div class="container">
+            @yield('content')
+            <div class="overlay toggle-menu"></div>
+        </div>
 
         <a href="javascript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i></a>
         <footer class="footer position-fixed bottom-0 end-0">

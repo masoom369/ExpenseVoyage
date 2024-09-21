@@ -27,7 +27,8 @@
         <select class="destinationCurrency" placeholder="Select Destination Currency">
             <option value="">Select Destination Currency</option>
             @foreach ($destinations as $destination)
-                <option value="{{ $destination->currency }}">{{ $destination->name }} ({{ $destination->currency }})</option>
+                <option value="{{ $destination->currency }}">{{ $destination->name }} ({{ $destination->currency }})
+                </option>
             @endforeach
         </select>
 
@@ -46,7 +47,7 @@
             </tr>
         </thead>
         <tbody id="expenseTable">
-            @foreach($expenses as $expense)
+            @foreach ($expenses as $expense)
                 <tr data-amount="{{ $expense->amount }}">
                     <td>{{ $expense->trip->name }}</td>
                     <td>{{ $expense->category->name }}</td>
@@ -54,10 +55,12 @@
                     <td class="converted-amount"></td>
                     <td>
                         <a href="{{ route('expenses.edit', $expense->id) }}" class="btn btn-success">Edit</a>
-                        <form action="{{ route('expenses.destroy', $expense->id) }}" method="POST" style="display:inline-block;">
+                        <form action="{{ route('expenses.destroy', $expense->id) }}" method="POST"
+                            style="display:inline-block;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
+                            <button type="submit" class="btn btn-danger"
+                                onclick="return confirm('Are you sure?')">Delete</button>
                         </form>
                     </td>
                 </tr>
@@ -93,7 +96,8 @@
                             $('#expenseTable tr').each(function() {
                                 let amount = $(this).data('amount');
                                 let convertedAmount = (amount * conversionRate).toFixed(2);
-                                $(this).find('.converted-amount').text(`${convertedAmount} ${userCurrency}`);
+                                $(this).find('.converted-amount').text(
+                                    `${convertedAmount} ${userCurrency}`);
                             });
                         } else {
                             alert("User currency not found in exchange rates.");
@@ -101,7 +105,8 @@
                     })
                     .catch(error => {
                         console.error("Error fetching data:", error);
-                        alert("There was an error fetching the exchange rates. Please try again later.");
+                        alert(
+                        "There was an error fetching the exchange rates. Please try again later.");
                     });
             });
         });
