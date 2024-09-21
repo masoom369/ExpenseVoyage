@@ -1,18 +1,17 @@
 @extends('layouts.website_main')
+
 @section('main_section')
-    <!-- Header Start -->
     <div class="container-fluid bg-breadcrumb">
         <div class="container text-center py-5" style="max-width: 900px;">
-            <h3 class="text-white display-3 mb-4">Contact Us</h1>
-                <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                    <li class="breadcrumb-item active text-white">Contact</li>
-                </ol>
+            <h3 class="text-white display-3 mb-4">Contact Us</h3>
+            <ol class="breadcrumb justify-content-center mb-0">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                <li class="breadcrumb-item active text-white">Contact</li>
+            </ol>
         </div>
     </div>
-    <!-- Header End -->
-    <!-- Contact Start -->
+
     <div class="container-fluid contact bg-light py-5">
         <div class="container py-5">
             <div class="mx-auto text-center mb-5" style="max-width: 900px;">
@@ -25,10 +24,8 @@
                     <div class="bg-white rounded p-4">
                         <div class="text-center mb-4">
                             <i class="fa fa-map-marker-alt fa-3x text-info"></i>
-                            <h4 class="text-info">
-                                <Address></Address>
-                            </h4>
-                            <p class="mb-0">123 ranking Street, <br> New York, USA</p>
+                            <h4 class="text-info">Address</h4>
+                            <p class="mb-0">123 Ranking Street, <br> New York, USA</p>
                         </div>
                         <div class="text-center mb-4">
                             <i class="fa fa-phone-alt fa-3x text-info mb-3"></i>
@@ -36,7 +33,6 @@
                             <p class="mb-0">+012 345 67890</p>
                             <p class="mb-0">+012 345 67890</p>
                         </div>
-
                         <div class="text-center">
                             <i class="fa fa-envelope-open fa-3x text-info mb-3"></i>
                             <h4 class="text-info">Email</h4>
@@ -49,8 +45,7 @@
                     <h3 class="mb-2">Send us a message</h3>
                     <p class="mb-4">Are you ready to transform the way you manage travel expenses? Sign up today and
                         experience the freedom of hassle-free budgeting. Let’s make every journey a smooth one together! <a
-                            href="https://htmlcodex.com/contact-form">Download Now</a>
-                        .</p>
+                            href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
 
                     <form method="POST" action="{{ route('contact.store') }}">
                         @csrf
@@ -100,5 +95,4 @@
             </div>
         </div>
     </div>
-    <!-- Contact End -->
 @endsection

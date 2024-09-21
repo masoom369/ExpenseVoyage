@@ -1,6 +1,6 @@
 @extends('layouts.website_main')
+
 @section('main_section')
-    <!-- Carousel Start -->
     <div class="carousel-header">
         <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
             <ol class="carousel-indicators">
@@ -14,9 +14,10 @@
                     <div class="carousel-caption">
                         <div class="p-3" style="max-width: 900px;">
                             <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">
-                                Reduce Complexity in Monitoring Travel Expenses</h4>
-                            <p class="mb-5 fs-5"> Expense tracking tools that are used today do not allow for reciept loss
-                                or dependancy on mess spreadsheets. While on trips with ExpenseVoyage, you will be able to
+                                Reduce Complexity in Monitoring Travel Expenses
+                            </h4>
+                            <p class="mb-5 fs-5">Expense tracking tools that are used today do not allow for receipt loss
+                                or dependency on messy spreadsheets. While on trips with ExpenseVoyage, you will be able to
                                 capture and tag travel costs while on the move to give you a good picture of how much you
                                 are spending.
                             </p>
@@ -32,8 +33,8 @@
                     <div class="carousel-caption">
                         <div class="p-3" style="max-width: 900px;">
                             <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">
-                                Efficient Working in Team during Group Travels</h4>
-
+                                Efficient Working in Team during Group Travels
+                            </h4>
                             <p class="mb-5 fs-5">Spending time with friends or business partners? Allocate shared expenses,
                                 manage everyone’s participation and divide amounts judiciously using ExpenseVoyage
                                 cooperation features.
@@ -50,7 +51,8 @@
                     <div class="carousel-caption">
                         <div class="p-3" style="max-width: 900px;">
                             <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">
-                                Seamless Currency Conversion on the Go</h4>
+                                Seamless Currency Conversion on the Go
+                            </h4>
                             <p class="mb-5 fs-5">No more manual calculations or currency confusion. ExpenseVoyage
                                 automatically converts expenses to your home currency, ensuring you have a clear
                                 understanding of what you're spending abroad.</p>
@@ -61,7 +63,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon btn bg-info" aria-hidden="false"></span>
@@ -72,8 +73,6 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-    </div>
-    <!-- Carousel End -->
     </div>
     <div class="container-fluid search-bar position-relative" style="top: -50%; transform: translateY(-50%);">
         <div class="container">
@@ -86,11 +85,9 @@
         </div>
     </div>
 
-    <!-- About Start -->
-    <div class="container-fluid about ">
+    <div class="container-fluid about">
         <div class="container mb-3">
             <div class="row g-5 align-items-center">
-
                 <div class="col-lg-12"
                     style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)), url(img/about-img-1.png);">
                     <center>
@@ -102,17 +99,14 @@
                         nightmare. We at ExpenseVoyage provide a solution to track your travel expenses to keep you
                         organized and within the limit.</p>
                     <a href="{{ url('about') }}" class="btn bg-info text-light"> Read More . . .</a>
-
                 </div>
             </div>
         </div>
-        <!-- About End -->
 
-        <!-- Services Start -->
         <div class="container-fluid bg-light service py-3">
             <div class="container py-5">
                 <div class="mx-auto text-center mb-5" style="max-width: 900px;">
-                    <h5 class="section-title px-3">Searvices</h5>
+                    <h5 class="section-title px-3">Services</h5>
                 </div>
                 <div class="row g-4">
                     <div class="col-lg-6">
@@ -122,7 +116,7 @@
                                     class="service-content-inner d-flex align-items-center bg-white border border-info rounded p-4 pe-0">
                                     <div class="service-content text-end">
                                         <h5 class="mb-4">Per Day Tracking</h5>
-                                        <p class="mb-0"> Log daily expenses easily to monitor your spending habits and
+                                        <p class="mb-0">Log daily expenses easily to monitor your spending habits and
                                             stay on top of your budget.
                                         </p>
                                     </div>
@@ -133,7 +127,7 @@
                             </div>
                             <div class="col-12">
                                 <div
-                                    class="service-content-inner d-flex align-items-center  bg-white border border-info rounded p-4 pe-0">
+                                    class="service-content-inner d-flex align-items-center bg-white border border-info rounded p-4 pe-0">
                                     <div class="service-content text-end">
                                         <h5 class="mb-4">Open to Multiple Currencies</h5>
                                         <p class="mb-">Inflight? ExpenseVoyage coins support different currencies, thus
@@ -146,8 +140,6 @@
                                     </div>
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -174,27 +166,20 @@
                                         <i class="fa fa-globe fa-4x text-info"></i>
                                     </div>
                                     <div class="service-content">
-                                        <h5 class="mb-3">Tailor made solutions for budgets
-                                        </h5>
+                                        <h5 class="mb-3">Tailor Made Solutions for Budgets</h5>
                                         <p class="mb-0">Make easy plans and keep tabs on your travel cost. With the
                                             budgeting options we offer, you are able to impose spend limits and achieve your
-                                            financial objectives helping you along your way..
+                                            financial objectives helping you along your way.
                                         </p>
                                     </div>
                                 </div>
                             </div>
-
-
-
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
-        <!-- Services End -->
 
-        <!-- Destination Start -->
         <div class="container-fluid destination py-3">
             <div class="container py-5">
                 <div class="mx-auto text-center mb-5" style="max-width: 900px;">
@@ -207,20 +192,19 @@
                                 @forelse ($destinations as $destination)
                                     <div class="col-lg-4">
                                         <a href="{{ url('trips/create') }}">
-                                            <div class="destination-img">
-                                                <img class="img-fluid rounded w-100"
+                                            <div class="destination-img" style="height: 300px; overflow: hidden;">
+                                                <img class="img-fluid rounded w-100 h-100"
                                                     src="{{ asset($destination->d_image_path) }}"
-                                                    alt="{{ $destination->name }}">
+                                                    alt="{{ $destination->name }}"
+                                                    style="height: 100%; object-fit: cover;">
                                                 <div class="destination-overlay p-4">
                                                     <h4 class="text-white mb-2 mt-3">{{ $destination->name }}</h4>
                                                 </div>
-
                                             </div>
                                         </a>
                                     </div>
-
                                 @empty
-                                    <p>no destinations found</p>
+                                    <p>No destinations found</p>
                                 @endforelse
                             </div>
                         </div>
@@ -228,8 +212,7 @@
                 </div>
             </div>
         </div>
-        <!-- Destination End -->
-        <!-- Testimonial Start -->
+
         <div class="container-fluid testimonial py-5">
             <div class="container py-5">
                 <div class="mx-auto text-center mb-5" style="max-width: 900px;">
@@ -330,10 +313,5 @@
                 </div>
             </div>
         </div>
-        <!-- Testimonial End -->
-
-        <!-- Subscribe Start -->
-
     </div>
-    <!-- Subscribe End -->
 @endsection

@@ -1,4 +1,4 @@
-@extends('layouts.user_dashboard')
+@extends('layouts.admin_dashboard')
 
 @section('content')
 <div class="card">
