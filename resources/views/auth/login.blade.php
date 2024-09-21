@@ -3,24 +3,21 @@
 @section('content')
 
     <div class="d-flex justify-content-center">
-        <div class="card card-authentication1 mt-3" style="width: 50%;"> <!-- Adjust width here -->
+        <div class="card card-authentication1 mt-3" style="width: 50%;">
             <div class="card-body">
                 <div class="text-center">
                     <x-authentication-card-logo />
                     <h5 class="card-title text-uppercase py-1">Sign In</h5>
                 </div>
 
-                {{-- Display Validation Errors --}}
                 <x-validation-errors class="mb-1" />
 
-                {{-- Display Status Message --}}
                 @if (session('status'))
                     <div class="mb-4 font-medium text-sm text-green-600">
                         {{ session('status') }}
                     </div>
                 @endif
 
-                {{-- Login Form --}}
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
 
@@ -44,7 +41,6 @@
                         </div>
                     </div>
 
-                    {{-- Remember Me Checkbox --}}
                     <div class="block mt-4">
                         <label for="remember_me" class="flex items-center">
                             <x-checkbox id="remember_me" name="remember" />
@@ -52,7 +48,6 @@
                         </label>
                     </div>
 
-                    {{-- Forgot Password Link --}}
                     <div class="text-center mt-2">
                         @if (Route::has('password.request'))
                             <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
@@ -61,7 +56,6 @@
                         @endif
                     </div>
 
-                    {{-- Login Button --}}
                     <div class="text-center mt-2">
                         <x-button class="ms-4">
                             {{ __('Log in') }}
@@ -70,7 +64,6 @@
                 </form>
             </div>
 
-            {{-- Footer with Register Link --}}
             <div class="card-footer text-center py-1">
                 <p class="text-warning">Don't have an account? <a href="{{ route('register') }}">Register here</a></p>
             </div>

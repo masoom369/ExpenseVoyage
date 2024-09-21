@@ -18,9 +18,7 @@ Route::middleware([
     })->name('dashboard');
 });
 
-// Route::get('/', function () {
-//     return view('ExpenseVoyage.index');
-// });
+
 Route::get('/contact', function () {
     return view('ExpenseVoyage.contact');
 });
@@ -31,9 +29,6 @@ Route::get('/about', function () {
 Route::get('/', [HomeController::class, 'destination']);
 Route::get('/home', [HomeController::class, 'home']);
 
-
-//trips
-
 Route::get('/trips', [TripController::class, 'index'])->name('trips.index')->middleware('user');
 Route::get('/trips/create', [TripController::class, 'create'])->name('trips.create')->middleware('user');
 Route::post('/trips', [TripController::class, 'store'])->name('trips.store')->middleware('user');
@@ -41,7 +36,6 @@ Route::get('/trips/{id}/edit', [TripController::class, 'edit'])->name('trips.edi
 Route::put('/trips/{id}', [TripController::class, 'update'])->name('trips.update')->middleware('user');
 Route::delete('/trips/{id}', [TripController::class, 'destroy'])->name('trips.destroy')->middleware('user');
 
-//category
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index')->middleware('user');
 Route::get('/categories/create', [CategoryController::class, 'create'])->name('categories.create')->middleware('user');
 Route::post('/categories', [CategoryController::class, 'store'])->name('categories.store')->middleware('user');
@@ -49,7 +43,6 @@ Route::get('/categories/{id}/edit', [CategoryController::class, 'edit'])->name('
 Route::put('/categories/{id}', [CategoryController::class, 'update'])->name('categories.update')->middleware('user');
 Route::delete('/categories/{id}', [CategoryController::class, 'destroy'])->name('categories.destroy')->middleware('user');
 
-//itenary
 Route::get('/itineraries', [ItineraryController::class, 'index'])->name('itineraries.index')->middleware('user');
 Route::get('/itineraries/create', [ItineraryController::class, 'create'])->name('itineraries.create')->middleware('user');
 Route::post('/itineraries', [ItineraryController::class, 'store'])->name('itineraries.store')->middleware('user');
@@ -74,10 +67,10 @@ Route::put('/destinations/{id}', [DestinationController::class, 'update'])->name
 Route::delete('/destinations/{id}', [DestinationController::class, 'destroy'])->name('destinations.destroy')->middleware('admin');
 
 
-Route::post('/contact', [ContactUsController::class, 'store'])->name('contact.store')->middleware('admin');
+Route::post('/contact', [ContactUsController::class, 'store'])->name('contact.store');
 Route::get('/contact', [ContactUsController::class, 'index'])->name('contact.index')->middleware('admin');
 
 Route::get('/expenses_database',[HomeController::class,'expenses_database'])->name('expenses_database')->middleware('user');
 Route::get('/itinerary_database',[HomeController::class,'itinerary_database'])->name('itinerary_database')->middleware('user');
-Route::get('expenses/report/download', [ExpenseController::class, 'downloadReport'])->name('expenses.downloadReport');
-Route::get('/itineraries/report', [ItineraryController::class, 'downloadReport'])->name('itineraries.report');
+Route::get('expenses/report/download', [ExpenseController::class, 'downloadReport'])->name('expenses.downloadReport')->middleware('user');
+Route::get('/itineraries/report', [ItineraryController::class, 'downloadReport'])->name('itineraries.report')->middleware('user');

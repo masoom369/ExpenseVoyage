@@ -4,8 +4,6 @@
 
    <div class="container mt-3">
        <a href="{{ route('categories.create') }}"  class="btn btn-primary mb-3 ">Add New Category</a>
-
-       {{-- Search bar --}}
        <input type="text" id="search" placeholder="Search Categories" class="form-control mb-3">
 
        <div class="card">
@@ -41,7 +39,6 @@
        </div>
    </div>
 
-   {{-- jQuery Script for Search Functionality --}}
    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
    <script>
        $(document).ready(function() {

@@ -3,11 +3,7 @@
 @section('content')
 
 <div class="container mt-3">
-
-    {{-- Trips Section --}}
     <a href="{{ route('trips.create') }}" class="btn btn-primary mb-3">Add New Trip</a>
-
-    {{-- Search bar --}}
     <input type="text" id="tripSearch" placeholder="Search Trips" class="form-control mb-3">
 
     <div class="card">
@@ -19,8 +15,8 @@
                         <tr>
                             <th>Name</th>
                             <th>Budget</th>
-                            <th>Start Date</th>  
-                            <th>End Date</th>                          
+                            <th>Start Date</th>
+                            <th>End Date</th>
                             <th>Edit</th>
                             <th>Delete</th>
                         </tr>
@@ -50,12 +46,9 @@
         </div>
     </div>
 </div>
-
-{{-- jQuery Script for Search Functionality --}}
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function() {
-        // Search functionality for trips
         $('#tripSearch').on('keyup', function() {
             var value = $(this).val().toLowerCase();
             $('#tripTable tr').filter(function() {

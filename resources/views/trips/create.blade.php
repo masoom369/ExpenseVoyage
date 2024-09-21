@@ -27,7 +27,7 @@
 
                 <div class="form-group mb-3">
                     <label for="end_date">End Date:</label>
-                    <input type="date" name="end_date" id="end_date" class="form-control"  required>
+                    <input type="date" name="end_date" id="end_date" class="form-control" min=""  required>
                 </div>
 
                 <div class="form-group mb-3">
@@ -50,16 +50,12 @@
     </div>
 </div>
 <script>
-    // Get today's date
     const today = new Date();
     const dd = String(today.getDate()).padStart(2, '0');
     const mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
     const yyyy = today.getFullYear();
-
-    // Format date as yyyy-mm-dd
     const formattedDate = `${yyyy}-${mm}-${dd}`;
-
-    // Set the min attribute
     document.getElementById('start_date').setAttribute('min', formattedDate);
+    document.getElementById('end_date').setAttribute('min', formattedDate);
 </script>
 @endsection

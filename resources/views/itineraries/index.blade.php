@@ -18,8 +18,6 @@
 <div class="container mt-3">
     <a href="{{ route('itineraries.report') }}" class="btn btn-secondary mb-3">Download Report</a>
     <a href="{{ route('itineraries.create') }}" class="btn btn-primary mb-3">Add New Itinerary</a>
-
-    <!-- Currency Selection -->
     <div class="mb-3">
         <select class="userCurrency" placeholder="Select User Currency">
             <option value="{{ $userCurrency }}">{{ $userCurrency }}</option>
@@ -34,11 +32,7 @@
 
         <button class="btn btn-primary convert">Convert</button>
     </div>
-
-    <!-- Search Bar -->
     <input type="text" id="search" placeholder="Search Itineraries" class="form-control mb-3">
-
-    <!-- Itineraries Table -->
     <div class="card">
         <div class="card-body">
             <h4>Itineraries</h4>
@@ -76,21 +70,16 @@
         </div>
     </div>
 </div>
-
-<!-- jQuery for search and conversion functionality -->
 <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
 <script>
     $(document).ready(function() {
-        // Search functionality
         $('#search').on('keyup', function() {
             var value = $(this).val().toLowerCase();
             $('#itineraryTableBody tr').filter(function() {
                 $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
             });
         });
-
-        // Currency conversion on button click
         $(".convert").on("click", function() {
             let userCurrency = $(".userCurrency").val();
             let destinationCurrency = $(".destinationCurrency").val();
@@ -99,8 +88,6 @@
                 alert("Please select both user and destination currencies.");
                 return;
             }
-
-            // Fetch conversion rates from API
             const api = `https://api.exchangerate-api.com/v4/latest/${destinationCurrency}`;
 
             fetch(api)
@@ -110,9 +97,9 @@
                         let conversionRate = data.rates[userCurrency];
 
                         $('#itineraryTableBody tr').each(function() {
-                            let amount = $(this).data('amount'); // Get amount from data attribute
-                            let convertedAmount = (amount * conversionRate).toFixed(2); // Multiply by conversion rate
-                            $(this).find('.converted-amount').text(`${convertedAmount} ${userCurrency}`); // Display in new column
+                            let amount = $(this).data('amount');
+                            let convertedAmount = (amount * conversionRate).toFixed(2);
+                            $(this).find('.converted-amount').text(`${convertedAmount} ${userCurrency}`);
                         });
                     } else {
                         alert("User currency not found in exchange rates.");

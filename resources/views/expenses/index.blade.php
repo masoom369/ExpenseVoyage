@@ -33,8 +33,6 @@
 
         <button class="btn btn-primary convert">Convert</button>
     </div>
-
-    {{-- Search bar --}}
     <input type="text" id="expenseSearch" placeholder="Search Expenses" class="form-control mb-3">
 
     <table class="table">
@@ -66,20 +64,15 @@
             @endforeach
         </tbody>
     </table>
-
-    {{-- jQuery Script for Search Functionality --}}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {
-            // Search functionality
             $('#expenseSearch').on('keyup', function() {
                 var value = $(this).val().toLowerCase();
                 $('#expenseTable tr').filter(function() {
                     $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
                 });
             });
-
-            // Currency conversion
             $(".convert").on("click", function() {
                 let userCurrency = $(".userCurrency").val();
                 let destinationCurrency = $(".destinationCurrency").val();

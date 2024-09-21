@@ -15,13 +15,11 @@ class TripController extends Controller
     }
 
     public function create() {
-
         $destinations = Destination::all();
         return view('trips.create', compact('destinations'));
     }
 
     public function store(Request $request) {
-
         $request->validate([
             'name' => 'required|string|max:255',
             'budget' => 'required|integer',
@@ -50,20 +48,16 @@ class TripController extends Controller
         return view('trips.edit', compact('trip', 'destinations'));
     }
 
-public function show($id)
-{
-    $trip = Trip::with(['expenses', 'itineraries'])->findOrFail($id);
+    public function show($id)
+    {
+        $trip = Trip::with(['expenses', 'itineraries'])->findOrFail($id);
+        $totalExpenses = $trip->expenses->sum('amount');
+        $budgetExceeded = $totalExpenses > $trip->budget;
 
-    // Calculate total expenses
-    $totalExpenses = $trip->expenses->sum('amount');
+        return view('trips.show', compact('trip', 'totalExpenses', 'budgetExceeded'));
+    }
 
-    // Check if total expenses exceed the budget
-    $budgetExceeded = $totalExpenses > $trip->budget;
-
-    return view('trips.show', compact('trip', 'totalExpenses', 'budgetExceeded'));
-}
     public function update(Request $request, $id) {
-
         $request->validate([
             'name' => 'required|string|max:255',
             'budget' => 'required|integer',

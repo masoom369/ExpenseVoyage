@@ -2,25 +2,17 @@
        <div class="container-fluid footer py-4">
     <div class="container py-4">
         <div class="row g-5">
-            <div class="col-md-6 col-lg-6 col-xl-3 text-center">
+            <div class="col-md-6 col-lg-6 col-xl-4 text-center">
                 <a href="{{ url('') }}" class="navbar-brand p-0">
                     <img src="{{ asset('template/logo.png') }}" alt="Logo" style="height: 200px;">
                 </a>
             </div>
 
-            <div class="col-md-6 col-lg-6 col-xl-3">
-                <div class="footer-item d-flex flex-column text-center">
-                    <h4 class="mb-4 text-white">Get In Touch</h4>
-                    <a href=""><i class="fas fa-home me-2"></i> 123 Street, New York, USA</a>
-                    <a href=""><i class="fas fa-envelope me-2"></i> info@example.com</a>
-                    <a href=""><i class="fas fa-phone me-2"></i> +012 345 67890</a>
-                    <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +012 345 67890</a>
-                </div>
-            </div>
 
-            <div class="col-md-6 col-lg-6 col-xl-3">
-                <div class="footer-item d-flex flex-column text-center">
-                    <h4 class="mb-4 text-white">Links</h4>
+
+            <div class="col-md-6 col-lg-6 col-xl-4">
+                <div class="footer-item d-flex flex-column ">
+                    <center><h4 class="mb-4 text-white">Links</h4></center>
                     <a href="{{ url('') }}"><i class="fas fa-angle-right me-2"></i>Home</a>
                     <a href="{{ url('about') }}"><i class="fas fa-angle-right me-2"></i>About</a>
                     <a href="{{ url('contact') }}"><i class="fas fa-angle-right me-2"></i>Contact</a>
@@ -43,7 +35,7 @@
                 </div>
             </div>
 
-            <div class="col-md-6 col-lg-6 col-xl-3">
+            <div class="col-md-6 col-lg-6 col-xl-4">
                 <h4 class="mb-4 text-white text-center">About Us</h4>
                 <p class="text-center">ExpenseVoyage: Simplifying Travel Expense Management for Everyone. Join us on your next journey and keep your finances in check!</p>
             </div>

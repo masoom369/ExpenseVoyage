@@ -9,7 +9,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
     <link href="{{ asset('dashboard-template/assets/css/pace.min.css') }}" rel="stylesheet" />
     <script src="{{ asset('dashboard-template/assets/js/pace.min.js') }}"></script>
-    <link rel="icon" href="{{ asset('dashboard-template/assets/images/favicon.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('template/logo1.png') }}" type="image/x-icon">
     <link href="{{ asset('dashboard-template/assets/plugins/vectormap/jquery-jvectormap-2.0.2.css') }}" rel="stylesheet" />
     <link href="{{ asset('dashboard-template/assets/plugins/simplebar/css/simplebar.css') }}" rel="stylesheet" />
     <link href="{{ asset('dashboard-template/assets/css/bootstrap.min.css') }}" rel="stylesheet" />

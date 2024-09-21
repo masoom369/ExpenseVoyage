@@ -18,12 +18,10 @@ class CategoryController extends Controller
     }
 
     public function store(Request $request) {
-        // Validate the request data
         $request->validate([
             'name' => 'required|string|max:255',
         ]);
 
-        // Create the category with the authenticated user's ID
         Category::create([
             'name' => $request->name,
             'user_id' => Auth::id(),
@@ -40,7 +38,6 @@ class CategoryController extends Controller
     }
 
     public function update(Request $request, $id) {
-        // Validate the request data
         $request->validate([
             'name' => 'required|string|max:255',
         ]);

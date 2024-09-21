@@ -5,8 +5,6 @@
     <div class="card-body">
         <div class="card-title">Add New Destination</div>
         <hr>
-
-        <!-- Display validation errors -->
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -17,7 +15,6 @@
             </div>
         @endif
 
-        <!-- Form to create a new destination -->
         <form action="{{ route('destinations.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
 

@@ -2,7 +2,7 @@
 @section('content')
 
     <div class="d-flex justify-content-center">
-        <div class="card card-authentication1 mt-3" style="width: 50%;"> <!-- Adjust width here -->
+        <div class="card card-authentication1 mt-3" style="width: 50%;">
             <div class="card-body">
                 <div class="text-center">
                     <x-authentication-card-logo />
