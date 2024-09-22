@@ -36,6 +36,11 @@
                     </a>
                 </li>
                 <li>
+                    <a href="{{ url('/contactdata') }}">
+                        <i class="zmdi zmdi-view-dashboard"></i> <span> Manage Contact Data</span>
+                    </a>
+                </li>
+                <li>
                     <a href="{{ url('/destinations') }}">
                         <i class="zmdi zmdi-view-dashboard"></i> <span> Manage Destinations</span>
                     </a>

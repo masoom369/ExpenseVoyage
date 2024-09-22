@@ -36,4 +36,11 @@ class ContactUsController extends Controller
         $messages = ContactUs::all();
         return view('admin.contactus-data', compact('messages'));
     }
+    public function destroy($id)
+    {
+        $message = ContactUs::findOrFail($id);
+        $message->delete();
+
+        return redirect()->back()->with('success', 'Message deleted successfully.');
+    }
 }

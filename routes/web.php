@@ -67,10 +67,11 @@ Route::put('/destinations/{id}', [DestinationController::class, 'update'])->name
 Route::delete('/destinations/{id}', [DestinationController::class, 'destroy'])->name('destinations.destroy')->middleware('admin');
 
 
-Route::post('/contact', [ContactUsController::class, 'store'])->name('contact.store');
-Route::get('/contact', [ContactUsController::class, 'index'])->name('contact.index')->middleware('admin');
+Route::post('/contactus', [ContactUsController::class, 'store'])->name('contact.store');
+Route::get('/contactdata', [ContactUsController::class, 'index'])->name('contact.index')->middleware('admin');
 
 Route::get('/expenses_database',[HomeController::class,'expenses_database'])->name('expenses_database')->middleware('user');
 Route::get('/itinerary_database',[HomeController::class,'itinerary_database'])->name('itinerary_database')->middleware('user');
 Route::get('expenses/report/download', [ExpenseController::class, 'downloadReport'])->name('expenses.downloadReport')->middleware('user');
 Route::get('/itineraries/report', [ItineraryController::class, 'downloadReport'])->name('itineraries.report')->middleware('user');
+Route::delete('/contact-us/{id}', [ContactUsController::class, 'destroy'])->name('contact-us.destroy');
